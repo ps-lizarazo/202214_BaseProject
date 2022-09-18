@@ -3,6 +3,7 @@ import {
   Controller,
   Delete,
   Get,
+  HttpCode,
   Param,
   Post,
   Put,
@@ -62,6 +63,7 @@ export class ProductoTiendaController {
   }
 
   @Delete(':idProduct/stores/:idStore')
+  @HttpCode(204)
   async deleteStoreFromProduct(
     @Param('idProduct') idProduct: string,
     @Param('idStore') idStore: string,
